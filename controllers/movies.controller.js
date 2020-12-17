@@ -32,6 +32,7 @@ module.exports = {
         }
     },
     addMovie: async(req,res)=>{  
+        console.log("Add movie");
         const { Title,Year,Rated,Genre,Plot} = req.movie;  
         try{
             const [movie,status] = await Movie.findOrCreate({
