@@ -15,12 +15,8 @@ module.exports = {
     getCommentById: async(req,res)=>{
         const {id}=req.params;
         try{
-            const comment = await Comment.findOne({where:{id:id}})
-            if (comment === null) {
-                console.log('Not found!');
-              } else {
-                res.status(200).json(comment);
-              }
+            const comments = await Comment.findAll({where:{movieId:id}})
+            res.status(200).json(comments);
         }
         catch(error){
             res.status(500).send({message:"Something goes wrong..."})

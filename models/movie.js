@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
      Movie.hasMany(models.Comment,{
-       foreignKey:'movieId'
+       foreignKey:'movieId',
      })
     }
   };
