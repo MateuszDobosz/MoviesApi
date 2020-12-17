@@ -25,7 +25,7 @@ module.exports = {
         const {id}=req.params;
         try{
             const movie = await Movie.findOne({where:{id:id}})
-            res.status(200).json(movie);
+           movie !==null ? res.status(200).json(movie) : res.status(500).send({message:`Movie with id:${id} doesnt exists`})
         }
         catch(error){
             res.status(500).send(error)
