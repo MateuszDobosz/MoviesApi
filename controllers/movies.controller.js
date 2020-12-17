@@ -4,12 +4,21 @@ const Movie=db.Movie;
 
 module.exports = {
     getMovies: async(req,res)=>{
+        const {sortBy} =req.query
+        let {orderBy}=req.query
+
+
+        orderBy !== "desc" ? orderBy="asc" : orderBy="desc"
         try{
-           const data= await Movie.findAll();
-           res.status(500).json(data);
+           const data= await Movie.findAll(
+           { order: [
+                [sortBy || 'id',orderBy]
+            ]}
+           );
+           res.status(200).json(data);
         }
         catch(e){
-            console.log(e);
+            res.status(500).send(e);
         }
     },
     addMovie: async(req,res)=>{  
@@ -22,7 +31,7 @@ module.exports = {
                 genre:Genre,
                 plot:Plot}
             })
-            status===true ? res.status(200).send(req.movie) : res.status(500).send({message:"This movie already exists in database"});
+            status===true ? res.status(200).send(movie) : res.status(500).send({message:"This movie already exists in database"});
             
         }
         catch(error){
