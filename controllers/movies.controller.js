@@ -10,12 +10,12 @@ module.exports = {
 
         orderBy !== "desc" ? orderBy="asc" : orderBy="desc"
         try{
-           const data= await Movie.findAll(
+           const movies= await Movie.findAll(
            { order: [
                 [sortBy || 'id',orderBy]
             ]}
            );
-           res.status(200).json(data);
+           res.status(200).json(movies);
         }
         catch(e){
             res.status(500).send(e);
