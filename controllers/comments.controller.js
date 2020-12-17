@@ -19,7 +19,7 @@ module.exports = {
             res.status(200).json(comments);
         }
         catch(error){
-            res.status(500).send({message:"Something goes wrong..."})
+            res.status(500).send(error)
         }
     },
     addComment: async(req,res)=>{
@@ -32,11 +32,11 @@ module.exports = {
                   text 
                } 
             )
-           res.status(200).json(comment);
+           res.status(201).json(comment);
         }
         catch(error)
         {
-            res.status(500).send(error);
+            res.status(500).send({message:`Movie with id: ${movieId} doesnt exist.`});
         }
     }
 }

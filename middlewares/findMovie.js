@@ -11,7 +11,7 @@ module.exports = {
             data.Response === "True" ? next() : res.status(500).send({message:`There is no movie with name: ${title}`})
         }
         catch(error){
-            res.status(500).send(error.message);
+            res.status(412).send(error.message);
         }
     }
     }
