@@ -23,7 +23,7 @@ module.exports = {
         }
     },
     addComment: async(req,res)=>{
-        console.log("ADDCOMMENT")
+
         const {text}=req.body;
         const {movieId}=req.body;
         try{

@@ -8,7 +8,7 @@ module.exports = {
         req.body.title ? next() : res.status(412).send({message:"Title is required"})
     },
     movie : async(req, res, next) => {
-        console.log("MOVIECHECK")
+ 
         const {movieId}=req.body;
         if(movieId)
         {  try{
@@ -24,7 +24,7 @@ module.exports = {
         }
         },
     text: (req, res, next) => {
-        console.log("TEXTCHECK")
+
         req.body.text ? next() : res.status(412).send({message:"Text is required"})
     }
     }
