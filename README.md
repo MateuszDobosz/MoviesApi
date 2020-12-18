@@ -1,6 +1,6 @@
 # MoviesApi
 
-## live: http://176.107.131.27:5005/
+## live: http://176.107.131.27:5005
 
 ## ENDPOINTS:
 ### GET: 
