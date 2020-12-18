@@ -13,5 +13,5 @@ app.use('/',routes);
 
 
 app.listen(port,  async() => {
-  console.log(`App listening at http://localhost:${port}`)
+  console.log(`App listening at port: ${port}`)
 })
