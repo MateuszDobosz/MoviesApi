@@ -2,8 +2,13 @@ const db=require('../models');
 
 const Movie=db.Movie;
 
+
 module.exports = {
-     checkMovie : async(req, res, next) => {
+     title: async(req, res, next) => {
+        req.body.title ? next() : res.status(412).send({message:"Title is required"})
+    },
+    movie : async(req, res, next) => {
+        console.log("MOVIECHECK")
         const {movieId}=req.body;
         if(movieId)
         {  try{
@@ -12,12 +17,14 @@ module.exports = {
         }
         catch(error){
             res.status(500).send(error);
+            
         }}
         else{
             res.status(412).send({message:"MovieId is required"})
         }
         },
-    checkText: (req, res, next) => {
+    text: (req, res, next) => {
+        console.log("TEXTCHECK")
         req.body.text ? next() : res.status(412).send({message:"Text is required"})
     }
     }

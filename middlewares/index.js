@@ -1,9 +1,8 @@
 const findMovie=require("./findMovie")
-const validation=require("./titleValidation")
-const checkComment=require("./checkComment")
+const validation=require("./validation")
+
 
 module.exports = {
     findMovie,
-    validation,
-    checkComment
+    validation
 }
