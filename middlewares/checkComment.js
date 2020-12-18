@@ -16,10 +16,7 @@ module.exports = {
         else{
             res.status(412).send({message:"MovieId is required"})
         }
-} 
-
-
-    ,
+        },
     checkText: (req, res, next) => {
         req.body.text ? next() : res.status(412).send({message:"Text is required"})
     }
