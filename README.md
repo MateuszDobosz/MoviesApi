@@ -14,4 +14,4 @@
 
 ### POST:
 - /movies - adds movie to database, title is required in body
-- /comment - adds comment to database, movieId and text are required in body
+- /comments - adds comment to database, movieId and text are required in body
